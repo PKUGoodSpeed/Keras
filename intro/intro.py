@@ -8,13 +8,13 @@ from keras.utils import np_utils, plot_model
 from IPython.display import SVG
 import matplotlib as mpl
 import matplotlib.pyplot as plt
+plt.switch_backend('agg')
 
 mpl.rc('font',family = 'serif',size = 17)
 mpl.rcParams['xtick.major.size'] = 5
 mpl.rcParams['xtick.minor.size'] = 2
 mpl.rcParams['ytick.major.size'] = 5
 mpl.rcParams['ytick.minor.size'] = 2
-plt.ion()
 
 def main():
     '''
