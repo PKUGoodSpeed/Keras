@@ -57,7 +57,7 @@ def main():
     
     ## Get results
     score, accu = model.evaluate(x_test, y_test, batch_size = 128)
-    print "The score of the model is: ", score
+    print "\nThe score of the model is: ", score
     print "The accuracy for the test cases is: ", accu
     
     w1, b1, w2, b2 = model.get_weights()
