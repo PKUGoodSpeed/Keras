@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 plt.switch_backend('agg')
 
 import sys
-sys.path.append('..')
+sys.path.append('../utils')
 from custom_activations import Itachi
 
 mpl.rc('font',family = 'serif',size = 17)
