@@ -31,7 +31,7 @@ def main():
     y_train = np_utils.to_categorical(y_train, n_cls)
     y_test = np_utils.to_categorical(y_test, n_cls)
     
-    print np.shape(x_train), np.shape(y_train), np.shape(x_test), np.shape(y_test)
+    print(np.shape(x_train), np.shape(y_train), np.shape(x_test), np.shape(y_test))
     
     ### Create model
     model = Sequential()
@@ -51,9 +51,9 @@ def main():
     res = model.fit(x_train, y_train, batch_size = 128, epochs = 5, shuffle = True, validation_data = (x_test, y_test))
     score, accu = model.evaluate(x_test, y_test, batch_size = 128)
     
-    print '\n\n'
-    print "The score of the model is ", score
-    print "The accuracy for the testing data is ", accu
+    print('\n\n')
+    print("The score of the model is ", score)
+    print("The accuracy for the testing data is ", accu)
     
     ### Show network structure
     plot_model(model, 'fc.png')
