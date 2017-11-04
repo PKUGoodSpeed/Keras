@@ -229,7 +229,7 @@ int main(int argc, char* argv[]){
     }
     for(int i=0;i<N_samp;++i){
         fout<<bid[i];
-        if(i<N_samp) fout<<' ';
+        if(i<N_samp-1) fout<<' ';
     }
     cout<<"Finish Generating ./data/prcs.txt!"<<endl;
     return 0;
