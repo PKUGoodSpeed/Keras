@@ -171,7 +171,7 @@ def main():
     out_pnl = []
     in_flip = []
     out_flip = []
-    for i in range(10):
+    for i in range(300):
         steps.append(i)
         res = model.fit(x_train, y_train, batch_size=512, epochs = 10, verbose = 0, 
         validation_data=(x_test, y_test), class_weight = cls_wts)
