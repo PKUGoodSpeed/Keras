@@ -34,11 +34,11 @@ class PerfectAction:
         total_pnl = 0.
         last_price = 0.
         for i in range(len(self.__ask)):
-            if action[i] == 1 and position < 1:
+            if actions[i] == 1 and position < 1:
                 total_pnl -= (1-position) * self.__ask[i] + fee
                 position = 1
                 last_price = self.__ask[i]
-            elif action[i] == 2 and position >-1:
+            elif actions[i] == 2 and position >-1:
                 total_pnl += (1+position) * self.__bid[i] - fee
                 position = -1
                 last_price = self.__bid[i]
@@ -54,14 +54,14 @@ class PerfectAction:
         high = np.max(self.__ask)
         while high > low + tick_size:
             mid = 0.5 * (high + low)
-            num_buy = (self.__ask < mid).sum
-            num_sell = (self.__bid > mid + prof).sum
-            if num_buy > sell:
-                low = mid
-            else:
+            num_buy = (self.__ask < mid).sum()
+            num_sell = (self.__bid > mid + prof).sum()
+            if num_buy > num_sell:
                 high = mid
+            else:
+                low = mid
         mid = 0.5 * (high + low)
-        return np.int16(self.__ask < mid) + np.int16(self.__bid > mid + prof)
+        return np.int16(self.__ask < mid) + np.int16(self.__bid > mid + prof)*2
         
     def bestSafeAction(self, tick_size = 1.0, prof_range = (1., 100.), fee = 0.41):
         '''
