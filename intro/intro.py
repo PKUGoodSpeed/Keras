@@ -69,7 +69,7 @@ def main():
     fig, axes = plt.subplots(r, c, figsize = (12, 6))
     for i,ax in enumerate(axes.flat):
         weights = w1[:, i]
-        ax.pcolor(weights.reshape(28, 28))
+        import matplotlib as mpl(weights.reshape(28, 28))
         ax.set_aspect(1.)
         ax.set_xticks([])
         ax.set_yticks([])
