@@ -223,10 +223,10 @@ def main():
     axes[1][1].set_xlabel('# of steps')
     axes[1][1].legend()
     
-    plt.savefig('btrcnn_output/convrg_rst.png')
+    plt.savefig('tx_cnn_output/convrg_rst.png')
     
     ## show model configuration
-    plot_model(model, to_file = 'btrcnn_output/model.png')
+    plot_model(model, to_file = 'tx_cnn_cnn_output/model.png')
     
     
 
