@@ -6,7 +6,7 @@ from keras.utils import np_utils, plot_model
 import tensorflow as tf
 
 from sys import stdout, path
-path.append('../utils')
+path.append('../../utils')
 from progress import ProgressBar
 from custom_activations import Itachi
 pbar = ProgressBar()
