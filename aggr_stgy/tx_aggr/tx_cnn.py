@@ -62,6 +62,8 @@ def load_data(filename = 'data/train.txt', win = 16):
             raw_y.append(0)
     fp.close()
     print "Preprocess the data!"
+    raw_x = raw_x[: 420000]
+    raw_y = raw_y[: 420000]
     raw_x = getMat(raw_x , win)
     raw_y = raw_y[win-1:]
     print np.shape(raw_x), np.shape(raw_y)
