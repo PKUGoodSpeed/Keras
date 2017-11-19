@@ -5,6 +5,7 @@ The first one is a safe strategy, which will always gets profit, but not guarant
 '''
 
 import numpy as np
+from progress import ProgressBar
 
 class PerfectAction:
     ''' 
@@ -13,6 +14,8 @@ class PerfectAction:
         0: holding (doing nothing)
         1: buying
         2: selling
+    
+    1: Safe action: but it gives a very bad pnl even though it is positive
     '''
     __ask = None
     __bid = None
@@ -67,9 +70,14 @@ class PerfectAction:
         '''
         Choose the Safe Action label which can return as the highest pnl
         '''
+        pb = ProgressBar()
         best_pnl = 0.
         best_prof = 0.
-        for prof in np.arange(prof_range[0], prof_range[1], 0.5*tick_size):
+        profs = np.arange(prof_range[0], prof_range[1], 0.5*tick_size)
+        pb.setBar(num_iteration = len(profs), bar_size = 100)
+        for i in range(len(profs)):
+            pb.show(i)
+            prof = profs[i]
             actions = self.naiveSafeAction(tick_size = tick_size, prof = prof)
             tmp_pnl = self.getPnl(actions, fee = fee)
             if tmp_pnl > best_pnl:
