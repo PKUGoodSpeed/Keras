@@ -90,7 +90,7 @@ def getPrice(filename = 'data/prcs.txt', win = 25, n_train = 120000, n_test = 40
     return ask[:n_train], bid[:n_train], ask[n_train:n_train+n_test], bid[n_train:n_train+n_test]
 
 
-def getPnl(act, ask, bid, fee = 0.5):
+def getPnl(act, ask, bid, fee = 0.41):
     '''
     Given a particular action list, predict the number of flips and pnl 
     we can obtain from this action list

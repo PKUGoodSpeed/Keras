@@ -203,7 +203,7 @@ int main(int argc, char* argv[]){
     GetTrainTest test(13);
     test.loadData(argv[2], 500);
     vi act;
-    double pnl = test.getPerfectAct(act, 0.5);
+    double pnl = test.getPerfectAct(act, 0.41);
     cout<<endl<<endl<<"shaocong"<<endl;
     cout<<pnl<<endl;
     test.normalizeFeats(ans);
